@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'asteroids/styles.css' %}">
+</head>
+
+<header>
+    <h1>{{title}}</h1>
+    <h2>Main Menu</h2>
+</header>
+
+<body>
+Have fun!
+<h3>HIGH SCORE: {{high_score}}</h3>
+<a href="/index.html">
+<button>
+Play
+</button>
+</a>
+</body>
+
+</html>

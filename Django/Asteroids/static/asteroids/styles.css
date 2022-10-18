@@ -1,0 +1,118 @@
+html {
+    background-color: rgb(232, 238, 243);
+    color: rgb(29, 37, 48);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 0 1em 0 rgb(0, 0, 0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+canvas {
+    margin-left: auto;
+    margin-right: auto;
+    /* BLACK MAGIC */
+    display: block;
+    width: 90%;
+    min-width: fit-content;
+    max-width: 600px;
+    height: 70%;
+    border-radius: 7px;
+    align-content: center;
+    text-align: center;
+    background-color: rgba(101, 161, 163, .1);
+}
+
+h1 {
+    letter-spacing: 30px;
+    padding: 5px;
+}
+
+h2 {
+    color: rgb(131, 75, 75);
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+h3 {
+    color: rgb(131, 185, 106);
+    font-size: 15px;
+    letter-spacing: 5px;
+}
+
+a {
+    max-width: fit-content;
+    margin: 1em auto;
+    padding-left: 1em;
+}
+
+a:hover {
+    background-color: rgb(37, 54, 92);
+}
+
+button {
+    letter-spacing: 15px;
+    font-size: medium;
+    padding: 15px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+
+/* tables */
+
+table,
+th,
+tr,
+td {
+    /* border: 1px solid black; */
+    margin: 0 auto;
+    font-size: 24px;
+    letter-spacing: .3em;
+    color: rgb(29, 37, 48);
+    padding: .85em;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.table-header {
+    font-weight: bolder;
+    border-radius: 7px;
+    background-color: rgba(101, 161, 163, .1);
+}
+
+.high-score {
+    font-weight: bolder;
+}
+
+#debug {
+    height: 0;
+}
+
+
+/* align content */
+
+.left-align {
+    text-align: left;
+}
+
+.right-align {
+    text-align: right;
+}
+
+
+/* DARK MODE */
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color: rgb(240, 240, 240);
+        background-color: rgb(29, 37, 48);
+    }
+}

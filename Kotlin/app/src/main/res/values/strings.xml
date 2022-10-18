@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Asteroids-Kotlin</string>
+    <string name="ship_accelerate_button">Thrust</string>
+    <string name="ship_rotate_left_button">Rotate Left</string>
+    <string name="ship_rotate_right_button">Rotate Right</string>
+    <string name="ship_fire_laser_button">Fire Laser</string>
+</resources>

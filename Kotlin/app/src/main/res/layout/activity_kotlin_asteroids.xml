@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KotlinAsteroidsActivity">
+
+    <com.example.asteroidsKotlin.Game
+        android:id="@+id/game"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/shipRotateLeftButton"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="#151515"
+        android:fontFamily="monospace"
+        android:hapticFeedbackEnabled="true"
+        android:text="@string/ship_rotate_left_button"
+        android:textColor="#D6D6D6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/shipRotateRightButton"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="#151515"
+        android:fontFamily="monospace"
+        android:hapticFeedbackEnabled="true"
+        android:text="@string/ship_rotate_right_button"
+        android:textColor="#D6D6D6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/shipAccelerateButton"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="261dp"
+        android:layout_marginBottom="75dp"
+        android:background="#151515"
+        android:fontFamily="monospace"
+        android:hapticFeedbackEnabled="true"
+        android:text="@string/ship_accelerate_button"
+        android:textColor="#D6D6D6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/game"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/shipFireLaserButton"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="75dp"
+        android:background="#151515"
+        android:fontFamily="monospace"
+        android:hapticFeedbackEnabled="true"
+        android:text="@string/ship_fire_laser_button"
+        android:textColor="#D6D6D6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

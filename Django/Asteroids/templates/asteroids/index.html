@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'asteroids/styles.css' %}">
+
+</head>
+
+<header>
+    <h1>{{title}}</h1>
+</header>
+
+<body>
+    {% comment %} navigation buttons {% endcomment %}
+    <a href="/Main-Menu.html"><button>Main Menu</button></a>
+
+    <div id="level-complete">
+        <h2>Level complete!</h2>
+    </div>
+
+    {% comment %} game {% endcomment %}
+    <div id="game-div" style="visibility: hidden;">
+        <p id="score"></p>
+        <canvas id="game canvas" width="600px" height="500px">
+            <button>Hello</button>
+        </canvas>
+    </div>
+
+    {% comment %} scores {% endcomment %}
+    <h1>HIGH SCORES:</h1>    
+    <table>
+        <tr class="table-header">
+            <td class="right-align" >Name</td>
+            <td class="left-align"  >Score</td>
+        </tr>
+
+        {% for key, value in high_scores.items %}
+            {% if forloop.first %}
+                <tr class="high-score">
+                    <td class="right-align" >{{key}}</td>
+                    <td class="left-align"  >{{value}}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td class="right-align" >{{key}}</td>
+                    <td class="left-align"  >{{value}}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+</body>
+
+{% comment %} run script {% endcomment %}
+<script src="{% static 'asteroids/scripts/main.js' %}" type="module"></script>
+
+</html>
