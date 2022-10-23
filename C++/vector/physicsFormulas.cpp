@@ -6,8 +6,8 @@
  **********************************************************************/
 
 #include "physicsFormulas.h"  // header file
-#include "movingObject.h"     // for MovingObject
-#include "ship.h"             // for Projectile (for now)
+#include "../game objects/moving objects/movingObject.h"     // for MovingObject
+#include "../game objects/moving objects/ship.h"             // for Projectile (for now)
 
 #include <cmath>              // for math functions
 

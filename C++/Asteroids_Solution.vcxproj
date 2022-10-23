@@ -127,22 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="game objects\moving objects\laser.hpp" />
-    <ClInclude Include="game objects\moving objects\movingObject.hpp" />
-    <ClInclude Include="game objects\moving objects\rocks.hpp" />
-    <ClInclude Include="game objects\moving objects\ship.hpp" />
-    <ClInclude Include="game objects\ui (objects)\level.hpp" />
-    <ClInclude Include="game objects\ui (objects)\score.hpp" />
-    <ClInclude Include="game.hpp" />
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="targetver.h" />
-    <ClInclude Include="ui\uiDraw.hpp" />
-    <ClInclude Include="ui\uiInteract.hpp" />
-    <ClInclude Include="vector\point.hpp" />
-    <ClInclude Include="vector\velocity.hpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ResourceCompile Include="Asteroids_Solution.rc" />
   </ItemGroup>
   <ItemGroup>
@@ -150,21 +134,36 @@
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="game objects\moving objects\laser.cpp" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game objects\moving objects\laser.h" />
+    <ClInclude Include="game objects\moving objects\movingObject.h" />
+    <ClInclude Include="game objects\moving objects\rocks.h" />
+    <ClInclude Include="game objects\moving objects\ship.h" />
+    <ClInclude Include="game objects\ui (objects)\level.h" />
+    <ClInclude Include="game objects\ui (objects)\score.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="ui\uiDraw.h" />
+    <ClInclude Include="ui\uiInteract.h" />
+    <ClInclude Include="vector\physicsFormulas.h" />
+    <ClInclude Include="vector\vector.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="game objects\moving objects\movingObject.cpp" />
     <ClCompile Include="game objects\moving objects\rocks.cpp" />
-    <ClCompile Include="game objects\moving objects\ship.cpp" />
-    <ClCompile Include="game objects\ui (objects)\level.cpp" />
-    <ClCompile Include="game objects\ui (objects)\score.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ui\uiDraw.cpp" />
     <ClCompile Include="ui\uiInteract.cpp" />
-    <ClCompile Include="vector\point.cpp" />
+    <ClCompile Include="vector\acceleration.cpp" />
+    <ClCompile Include="vector\force.cpp" />
+    <ClCompile Include="vector\gravity.cpp" />
+    <ClCompile Include="vector\physicsFormulas.cpp" />
+    <ClCompile Include="vector\position.cpp" />
+    <ClCompile Include="vector\trig.cpp" />
+    <ClCompile Include="vector\vector.cpp" />
     <ClCompile Include="vector\velocity.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
