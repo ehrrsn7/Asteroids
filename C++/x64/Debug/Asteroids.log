@@ -1,0 +1,27 @@
+﻿  laser.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\game objects\moving objects\laser.hpp(11,1): fatal  error C1083: Cannot open type library file: 'c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.33.31629\include\iostream': Error loading type library/DLL.
+  movingObject.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\game objects\moving objects\movingObject.hpp(15,10): fatal  error C1083: Cannot open include file: 'point.hpp': No such file or directory
+  rocks.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\game objects\moving objects\movingObject.hpp(15,10): fatal  error C1083: Cannot open include file: 'point.hpp': No such file or directory
+  ship.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\game objects\moving objects\movingObject.hpp(15,10): fatal  error C1083: Cannot open include file: 'point.hpp': No such file or directory
+  level.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\game objects\ui (objects)\level.hpp(12,10): fatal  error C1083: Cannot open include file: 'point.hpp': No such file or directory
+  score.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\game objects\ui (objects)\score.hpp(14,10): fatal  error C1083: Cannot open include file: 'point.hpp': No such file or directory
+  game.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\game.hpp(18,10): fatal  error C1083: Cannot open include file: 'point.hpp': No such file or directory
+  main.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\game.hpp(18,10): fatal  error C1083: Cannot open include file: 'point.hpp': No such file or directory
+  uiDraw.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\ui\uiDraw.cpp(38,10): fatal  error C1083: Cannot open include file: 'point.hpp': No such file or directory
+  uiInteract.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\ui\uiInteract.hpp(31,10): fatal  error C1083: Cannot open include file: 'point.hpp': No such file or directory
+  point.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\vector\velocity.hpp(18,31): error C2065: 'M_PI': undeclared identifier
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\vector\velocity.hpp(23,37): error C2065: 'M_PI': undeclared identifier
+  velocity.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\vector\velocity.hpp(18,31): error C2065: 'M_PI': undeclared identifier
+C:\Users\Admin\Documents\Code\Asteroids\C++\Asteroids\vector\velocity.hpp(23,37): error C2065: 'M_PI': undeclared identifier
+  Generating Code...
