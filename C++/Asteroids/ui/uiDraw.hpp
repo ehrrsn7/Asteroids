@@ -15,7 +15,7 @@
 
 #include <string>     // To display text on the screen
 #include <cmath>      // for M_PI, sin() and cos()
-#include "point.hpp"    // Where things are drawn
+#include "../vector/point.hpp"    // Where things are drawn
 using std::string;
 
 /************************************************************************

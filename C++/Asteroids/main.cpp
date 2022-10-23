@@ -36,8 +36,8 @@ ASTEROIDS
  *  called each time through the game loop.
  ******************************************************/
 #include "game.hpp"
-#include "uiInteract.hpp"
 #include <iostream>
+#include "ui/uiInteract.hpp"
 
 #define SCREEN_WIDTH 500
 #define SCREEN_HEIGHT 400

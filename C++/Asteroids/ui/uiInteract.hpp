@@ -28,7 +28,7 @@ enum keys {
     ESC
 };
 
-#include "point.hpp"
+#include "../vector/point.hpp"
 #include <unordered_map> // used to hash heldKeys<bool>
 
 /********************************************

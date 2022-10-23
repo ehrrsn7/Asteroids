@@ -39,7 +39,7 @@
 #endif // _WIN32
 
 #include "uiInteract.hpp"
-#include "point.hpp"
+#include "../vector/point.hpp"
 
 using namespace std;
 

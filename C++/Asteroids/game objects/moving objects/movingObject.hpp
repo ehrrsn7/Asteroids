@@ -12,8 +12,8 @@
 #include <string>
 #include <math.h>
 
-#include "point.hpp"
-#include "velocity.hpp"
+#include "../../vector/point.hpp"
+#include "../../vector/velocity.hpp"
 
 #define FPS 60.0
 

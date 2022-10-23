@@ -8,11 +8,11 @@
 #ifndef laser_hpp
 #define laser_hpp
 
-#import <iostream>
-#import "movingObject.hpp"
-#import "point.hpp"
-#import "velocity.hpp"
-#import "uiDraw.hpp"
+#include <iostream>
+#include "movingObject.hpp"
+#include "../../vector/point.hpp"
+#include "../../vector/velocity.hpp"
+#include "../../ui/uiDraw.hpp"
 
 #define FIRE_DELAY_TIME .05 // laser firing rate delay in seconds
 #define LASER_SPEED 10 // speed in pixels/frame

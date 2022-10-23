@@ -13,8 +13,8 @@
 
 #include "movingObject.hpp"
 #include "laser.hpp"
-#include "uiDraw.hpp"
-#include "uiInteract.hpp" // for rotation directions' int values
+#include "../../ui/uiDraw.hpp"
+#include "../../ui/uiInteract.hpp" // for rotation directions' int values
 
 #define SHIP_ROTATE_AMOUNT 15 // in rad/s
 #define SHIP_ACCELERATE_AMOUNT 2

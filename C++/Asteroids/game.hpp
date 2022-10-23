@@ -15,16 +15,16 @@
 #include <map> // held keys
 #include <cmath>
 
-#include "point.hpp" // point
-#include "uiInteract.hpp" // user interaction
+#include "vector/point.hpp" // point
+#include "ui/uiInteract.hpp" // user interaction
 
 // import game objects
-#include "movingObject.hpp"
-#include "ship.hpp"
-#include "laser.hpp"
-#include "score.hpp"
-#include "level.hpp"
-#include "rocks.hpp"
+#include "game objects/moving objects/movingObject.hpp"
+#include "game objects/moving objects/ship.hpp"
+#include "game objects/moving objects/laser.hpp"
+#include "game objects/ui (objects)/score.hpp"
+#include "game objects/ui (objects)/level.hpp"
+#include "game objects/moving objects/rocks.hpp"
 
 class Game {
 private:

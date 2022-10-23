@@ -156,17 +156,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="resources\Asteroids.ico" />
-    <Image Include="resources\small.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="resources\Asteroids.rc" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets" Condition="Exists('packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" />
     <Import Project="packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets" Condition="Exists('packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets')" />
+    <Import Project="packages\boost.1.80.0\build\boost.targets" Condition="Exists('packages\boost.1.80.0\build\boost.targets')" />
+    <Import Project="packages\boost_iostreams-vc140.1.80.0\build\boost_iostreams-vc140.targets" Condition="Exists('packages\boost_iostreams-vc140.1.80.0\build\boost_iostreams-vc140.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -174,5 +169,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets'))" />
     <Error Condition="!Exists('packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets'))" />
+    <Error Condition="!Exists('packages\boost.1.80.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost.1.80.0\build\boost.targets'))" />
+    <Error Condition="!Exists('packages\boost_iostreams-vc140.1.80.0\build\boost_iostreams-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost_iostreams-vc140.1.80.0\build\boost_iostreams-vc140.targets'))" />
   </Target>
 </Project>

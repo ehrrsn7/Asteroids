@@ -35,7 +35,7 @@
 #include <math.h>
 #endif // _WIN32
 
-#include "point.hpp"
+#include "../vector/point.hpp"
 #include "uiDraw.hpp"
 
 using namespace std;

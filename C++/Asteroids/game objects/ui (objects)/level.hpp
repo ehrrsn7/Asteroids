@@ -9,8 +9,8 @@
 #define level_hpp
 
 #include <iostream>
-#include "point.hpp"
-#include "uiDraw.hpp"
+#include "../../vector/point.hpp"
+#include "../../ui/uiDraw.hpp"
 
 class Level {
 
