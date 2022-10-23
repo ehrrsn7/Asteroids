@@ -73,5 +73,3 @@ int main(int argc, char ** argv) {
 
     return 0;
 }
-
-// TODO: change all files (except game) to just having .cpp and no header file to minimize no. of files
