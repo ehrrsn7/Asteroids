@@ -1,5 +1,5 @@
 //
-//  game.hpp
+//  game.h
 //  Asteroids
 //
 //  Created by Elijah Harrison on 11/7/20.
@@ -15,25 +15,25 @@
 #include <map> // held keys
 #include <cmath>
 
-#include "vector/point.hpp" // point
-#include "ui/uiInteract.hpp" // user interaction
+#include "vector/vector.h" // point
+#include "ui/uiInteract.h" // user interaction
 
 // import game objects
-#include "game objects/moving objects/movingObject.hpp"
-#include "game objects/moving objects/ship.hpp"
-#include "game objects/moving objects/laser.hpp"
-#include "game objects/ui (objects)/score.hpp"
-#include "game objects/ui (objects)/level.hpp"
-#include "game objects/moving objects/rocks.hpp"
+#include "game objects/moving objects/movingObject.h"
+#include "game objects/moving objects/ship.h"
+#include "game objects/moving objects/laser.h"
+#include "game objects/ui (objects)/score.h"
+#include "game objects/ui (objects)/level.h"
+#include "game objects/moving objects/rocks.h"
 
 class Game {
 private:
     // screen positioning
-    float screenLeft;
-    float screenRight;
-    float screenBottom;
-    float screenTop;
-    Point center;
+    double screenLeft;
+    double screenRight;
+    double screenBottom;
+    double screenTop;
+    Position center;
     
     // game objects
     Ship* ship;
@@ -43,15 +43,15 @@ private:
     Score score;
     
     // in game.cpp:
-    void setUpScreen(Point tl, Point br);
+    void setUpScreen(Position tl, Position br);
     void fireLaser();
     void asteroidBelt();
-    Rock* createRock(int whichRock, Point pInit, Velocity vInit, bool isInitial);
+    Rock* createRock(int whichRock, Position pInit, Velocity vInit, bool isInitial);
     void wrapObjects();
     void wrap(MovingObject* obj);
     void handleCollisions();
     bool checkCollision(MovingObject* obj1, MovingObject* obj2);
-    float getClosestDistance(const MovingObject &obj1, const MovingObject &obj2);
+    double getClosestDistance(const MovingObject &obj1, const MovingObject &obj2);
     
     // "bring out ur deaaaaaaaaaad"
     void cleanUpZombies();
@@ -69,7 +69,7 @@ private:
     void resetScore();
 
 public:
-    Game(Point topLeft, Point bottomRight) {
+    Game(Position topLeft, Position bottomRight) {
         /* Set up the initial conditions of the game */
         setUpScreen(topLeft, bottomRight);
         
@@ -122,7 +122,7 @@ public:
     
     void handleInput(const Interface & ui) {
         
-        /* heldKeys defined/handled in uiInteract.cpp/.hpp */
+        /* heldKeys defined/handled in uiInteract.cpp/.h */
         
         // reset
         if (ui.getHeldKey(R)) reset();

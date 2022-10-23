@@ -10,12 +10,12 @@
  *     pointer towards the bottom of the file.
  ************************************************************************/
 
-#include <string>     // need you ask?
-#include <sstream>    // convert an integer into text
-#include <cassert>    // I feel the need... the need for asserts
-#include <time.h>     // for clock
-#include <cstdlib>    // for rand()
-
+#include <string>    // need you ask?
+#include <sstream>   // convert an integer into text
+#include <cassert>   // I feel the need... the need for asserts
+#include <time.h>    // for clock
+#include <cstdlib>   // for rand()
+#include <iostream>  // cout/endl
 
 #ifdef __APPLE__
 #include <openGL/gl.h>    // Main OpenGL library
@@ -38,8 +38,8 @@
 #include <math.h>
 #endif // _WIN32
 
-#include "uiInteract.hpp"
-#include "../vector/point.hpp"
+#include "uiInteract.h"
+#include "../vector/vector.h"
 
 using namespace std;
 
@@ -87,7 +87,7 @@ void drawCallback()
    // even though this is a local variable, all the members are static
    Interface ui;
    // Prepare the background buffer for drawing
-   glClear(GL_COLOR_BUFFER_BIT); //clear the screen
+   glClear(GL_COLOR_BUFFER_BIT); // clear the screen
    glColor3f(1,1,1);
    
    //calls the client's display function
@@ -284,7 +284,7 @@ Interface::~Interface() { }
  *           argv:       The actual command-line parameters
  *           title:      The text for the titlebar of the window
  *************************************************************************/
-void Interface::initialize(int argc, char ** argv, const char * title, Point topLeft, Point bottomRight)
+void Interface::initialize(int argc, char ** argv, const char * title, Position topLeft, Position bottomRight)
 {
    if (initialized)
       return;
@@ -294,12 +294,12 @@ void Interface::initialize(int argc, char ** argv, const char * title, Point top
 
    // create the window
    glutInit(&argc, argv);
-   Point point;
+   Position point;
    glutInitWindowSize(   // size of the window
       (int)(bottomRight.getX() - topLeft.getX()),
       (int)(topLeft.getY() - bottomRight.getY()));
             
-   glutInitWindowPosition( 10, 10);                // initial position
+   glutInitWindowPosition(10, 10);               // initial position
    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);  // double buffering
    glutCreateWindow(title);              // text on titlebar
    glutIgnoreKeyRepeat(true);

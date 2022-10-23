@@ -1,5 +1,5 @@
 //
-//  laser.hpp
+//  laser.h
 //  Asteroids
 //
 //  Created by Elijah Harrison on 11/8/20.
@@ -9,10 +9,9 @@
 #define laser_hpp
 
 #include <iostream>
-#include "movingObject.hpp"
-#include "../../vector/point.hpp"
-#include "../../vector/velocity.hpp"
-#include "../../ui/uiDraw.hpp"
+#include "movingObject.h"
+#include "../../vector/vector.h"
+#include "../../ui/uiDraw.h"
 
 #define FIRE_DELAY_TIME .05 // laser firing rate delay in seconds
 #define LASER_SPEED 10 // speed in pixels/frame
@@ -24,15 +23,15 @@
 
 class Laser : public MovingObject {
 public:
-    Laser(float firingAngle, Point shipPoint, Velocity shipVelocity, float shipRadius) {
+    Laser(double firingAngle, Position shipPosition, Velocity shipVelocity, double shipRadius) {
         // initialize
         name = "Laser";
         gameObjectID = laser;
 
         // fire laser
-        setPoint(shipPoint); // initialize at ship's position
-        p.add(Velocity::forward(firingAngle) * shipRadius * 6); // offset to front of ship
-        setVelocity(Velocity::forward(firingAngle) * LASER_SPEED); // fire!!
+        setPosition(shipPosition); // initialize at ship's position
+        p.add(Velocity::forward(firingAngle) * (shipRadius * 6.0)); // offset to front of ship
+        setVelocity(Acceleration::forward(firingAngle) * LASER_SPEED); // fire!!
         setDeathTimer(LASER_DEATH_TIME); // set to expire after desired amount (LASER_DEATH_TIME)
         
         // debug

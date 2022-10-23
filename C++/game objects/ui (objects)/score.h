@@ -1,5 +1,5 @@
 //
-//  score.hpp
+//  score.h
 //  Asteroids
 //
 //  Created by Elijah Harrison on 11/7/20.
@@ -11,14 +11,14 @@
 #include <iostream>
 #include <string>
 
-#include "../../vector/point.hpp"
-#include "../../ui/uiDraw.hpp"
+#include "../../vector/vector.h"
+#include "../../ui/uiDraw.h"
 
 class Score {
 
 private:
     int score;
-    Point position;
+    Position position;
 
 public:
     Score() {
@@ -26,7 +26,7 @@ public:
         score = 0;
     }
     
-    void set(Point p) { position.set(p); }
+    void set(Position p) { position.set(p); }
     
     void display() {
         std::string scoreText = "Score: ";
@@ -34,7 +34,7 @@ public:
         drawText(position, scoreText.c_str());
     }
     
-    void add(int dPoints) { score += dPoints; }    
+    void add(int dPoints) { score += dPoints; }
     void reset() { score = 0; }
 };
 

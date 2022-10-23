@@ -28,7 +28,7 @@ enum keys {
     ESC
 };
 
-#include "../vector/point.hpp"
+#include "../vector/vector.h"
 #include <unordered_map> // used to hash heldKeys<bool>
 
 /********************************************
@@ -41,11 +41,11 @@ class Interface {
     public:
     // Default constructor useful for setting up the random variables
     // or for opening the file for output
-    Interface() { initialize(0, 0x0000, "Window", Point(-50, 50), Point(50, -50)); };
+    Interface() { initialize(0, 0x0000, "Window", Position(-50, 50), Position(50, -50)); };
 
     // Constructor if you want to set up the window with anything but
     // the default parameters
-    Interface(int argc, char ** argv, const char * title, Point topLeft, Point bottomRight)
+    Interface(int argc, char ** argv, const char * title, Position topLeft, Position bottomRight)
     {
       initialize(argc, argv, title, topLeft, bottomRight);
     }
@@ -85,7 +85,7 @@ class Interface {
     static void (*callBack)(const Interface *, void *);
 
     private:
-    void initialize(int argc, char ** argv, const char * title, Point topLeft, Point bottomRight);
+    void initialize(int argc, char ** argv, const char * title, Position topLeft, Position bottomRight);
 
     static bool         initialized;    // only run the constructor once!
     static double       timePeriod;     // interval between frame draws

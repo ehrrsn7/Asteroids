@@ -35,12 +35,14 @@ ASTEROIDS
  *  that specifies what methods of the game class are
  *  called each time through the game loop.
  ******************************************************/
-#include "game.hpp"
+#include "game.h"
 #include <iostream>
-#include "ui/uiInteract.hpp"
+#include "ui/uiInteract.h"
 
 #define SCREEN_WIDTH 500
 #define SCREEN_HEIGHT 400
+
+double Position::metersFromPixels = 40.0;
 
 /*************************************
  * All the interesting work happens here, when
@@ -50,11 +52,11 @@ ASTEROIDS
  * time has passed and put the drawing on the screen.
  **************************************/
 void update(const Interface *pUI, void *p) {
-    Game *pGame = (Game *) p;
+   Game *pGame = (Game *) p;
 
-    pGame->update();
-    pGame->handleInput(*pUI);
-    pGame->display(*pUI);
+   pGame->update();
+   pGame->handleInput(*pUI);
+   pGame->display(*pUI);
 }
 
 /*********************************
@@ -63,13 +65,13 @@ void update(const Interface *pUI, void *p) {
  * That is all!
  *********************************/
 int main(int argc, char ** argv) {
-    std::cout << "Hello world!" << std::endl;
-    Point topLeft(-SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
-    Point bottomRight(SCREEN_WIDTH/2, -SCREEN_HEIGHT/2);
+   Position topLeft(-SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+   Position bottomRight(SCREEN_WIDTH/2, -SCREEN_HEIGHT/2);
 
-    Interface ui(argc, argv, "Asteroids", topLeft, bottomRight);
-    Game game(topLeft, bottomRight);
-    ui.run(update, &game);
+   Interface ui(argc, argv, "Asteroids", topLeft, bottomRight);
+   Game game(topLeft, bottomRight);
+   std::cout << "Initialization complete.\n";
+   ui.run(update, &game);
 
-    return 0;
+   return 0;
 }

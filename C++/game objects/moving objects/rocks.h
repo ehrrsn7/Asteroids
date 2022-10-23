@@ -1,5 +1,5 @@
 //
-//  rocks.hpp
+//  rocks.h
 //  Asteroids
 //
 //  Created by Elijah Harrison on 11/14/20.
@@ -10,8 +10,8 @@
 
 #include <iostream>
 
-#include "movingObject.hpp"
-#include "../../ui/uiDraw.hpp"
+#include "movingObject.h"
+#include "../../ui/uiDraw.h"
 
 #define ROCK_INIT_AMOUNT 3 // amount of rocks spawned in first level scene
 #define ROCK_INIT_LAUNCH_FORCE 5 // force applied to rocks that are spawned in N
@@ -68,13 +68,13 @@ public:
         // debug (pt. 1; pt. 2 located in drawLargeAsteroid())
         // std::cout << name << ".display() called. // ";
         
-        // Draw asteroid at Point p and angle r
+        // Draw asteroid at Position p and angle r
         drawLargeAsteroid(p, rotation);
     }
 
     void initializeRotation();
     void initializePosition();
-    void initializePosition(Point pInit);
+    void initializePosition(Position pInit);
     void initializeVelocity();
     void initializeVelocity(Velocity vInit);
     
@@ -103,7 +103,7 @@ public:
         }
     }
     
-    static float getRockRotateSpeed(int rockID) {
+    static double getRockRotateSpeed(int rockID) {
         switch (rockID) {
             case bigRock:    return BIG_ROCK_ROTATE_SPEED;
             case mediumRock: return MEDIUM_ROCK_ROTATE_SPEED;
@@ -115,7 +115,7 @@ public:
 
 class BigRock : public Rock {
 public:
-    BigRock(Point pInit, Velocity vInit) {
+    BigRock(Position pInit, Velocity vInit) {
         name = "Big Rock";
         rockIndex = bigRock;
         r = BIG_ROCK_RADIUS;
@@ -127,7 +127,7 @@ public:
 
 class MediumRock : public Rock {
 public:
-    MediumRock(Point pInit, Velocity vInit) {
+    MediumRock(Position pInit, Velocity vInit) {
         name = "Medium Rock";
         rockIndex = mediumRock;
         r = MEDIUM_ROCK_RADIUS;
@@ -135,7 +135,7 @@ public:
         initializeVelocity(vInit);
         scoreAmount = MEDIUM_ROCK_SCORE;
     }
-    MediumRock(Point pInit, Velocity vInit, Velocity vShipInit) {
+    MediumRock(Position pInit, Velocity vInit, Velocity vShipInit) {
         name = "Medium Rock";
         rockIndex = mediumRock;
         r = MEDIUM_ROCK_RADIUS;
@@ -151,7 +151,7 @@ public:
 
 class SmallRock : public Rock {
 public:
-    SmallRock(Point pInit, Velocity vInit) {
+    SmallRock(Position pInit, Velocity vInit) {
         name = "Small Rock";
         rockIndex = smallRock;
         r = SMALL_ROCK_RADIUS;
@@ -159,7 +159,7 @@ public:
         initializeVelocity(vInit);
         scoreAmount = SMALL_ROCK_SCORE;
     }
-    SmallRock(Point pInit, Velocity vInit, Velocity vShipInit) {
+    SmallRock(Position pInit, Velocity vInit, Velocity vShipInit) {
         name = "Small Rock";
         rockIndex = smallRock;
         r = SMALL_ROCK_RADIUS;

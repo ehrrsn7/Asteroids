@@ -35,8 +35,8 @@
 #include <math.h>
 #endif // _WIN32
 
-#include "../vector/point.hpp"
-#include "uiDraw.hpp"
+#include "../vector/vector.h"
+#include "uiDraw.h"
 
 using namespace std;
 
@@ -72,7 +72,7 @@ const char NUMBER_OUTLINES[10][20] =
  *   INPUT  topLeft   The top left corner of the character
  *          digit     The digit we are rendering: '0' .. '9'
  *************************************************************************/
-void drawDigit(const Point & topLeft, char digit)
+void drawDigit(const Position & topLeft, char digit)
 {
    // we better be only drawing digits
    assert(isdigit(digit));
@@ -92,10 +92,10 @@ void drawDigit(const Point & topLeft, char digit)
              NUMBER_OUTLINES[r][c + 3] != -1);
 
       //Draw a line based off of the num structure for each number
-      Point start;
+      Position start;
       start.setX(topLeft.getX() + NUMBER_OUTLINES[r][c]);
       start.setY(topLeft.getY() - NUMBER_OUTLINES[r][c + 1]);
-      Point end;
+      Position end;
       end.setX(topLeft.getX() + NUMBER_OUTLINES[r][c + 2]);
       end.setY(topLeft.getY() - NUMBER_OUTLINES[r][c + 3]);
          
@@ -109,10 +109,10 @@ void drawDigit(const Point & topLeft, char digit)
  *   INPUT  topLeft   The top left corner of the character
  *          digit     The digit we are rendering: '0' .. '9'
  *************************************************************************/
-void drawNumber(const Point & topLeft, int number)
+void drawNumber(const Position & topLeft, int number)
 {
    // our cursor, if you will. It will advance as we output digits
-   Point point = topLeft;
+   Position point = topLeft;
    
    // is this negative
    bool isNegative = (number < 0);
@@ -149,7 +149,7 @@ void drawNumber(const Point & topLeft, int number)
  *   INPUT  topLeft   The top left corner of the text
  *          text      The text to be displayed
  ************************************************************************/
-void drawText(const Point & topLeft, const char * text)
+void drawText(const Position & topLeft, const char * text)
 {
    void *pFont = GLUT_BITMAP_HELVETICA_12;  // also try _18
 
@@ -171,7 +171,7 @@ void drawText(const Point & topLeft, const char * text)
  *          rotation True circles are rotation independent.  However, if you
  *                   are drawing a 3-sided polygon (triangle), this matters!
  *************************************************************************/
-void drawPolygon(const Point & center, int radius, int points, int rotation)
+void drawPolygon(const Position & center, int radius, int points, int rotation)
 {
    // begin drawing
    glBegin(GL_LINE_LOOP);
@@ -180,7 +180,7 @@ void drawPolygon(const Point & center, int radius, int points, int rotation)
    //one point to the next
    for (double i = 0; i < 2 * M_PI; i += (2 * M_PI) / points)
    {
-      Point temp(false /*check*/);
+      Position temp(false /*check*/);
       temp.setX(center.getX() + (radius * cos(i)));
       temp.setY(center.getY() + (radius * sin(i)));
       rotate(temp, center, rotation);
@@ -202,14 +202,14 @@ void drawPolygon(const Point & center, int radius, int points, int rotation)
  *           rotation Rotation in degrees
  *    OUTPUT point    The new position
  *************************************************************************/
-void rotate(Point & point, const Point & origin, int rotation)
+void rotate(Position & point, const Position & origin, int rotation)
 {
    // because sine and cosine are expensive, we want to call them only once
    double cosA = cos(deg2rad(rotation));
    double sinA = sin(deg2rad(rotation));
 
    // remember our original point
-   Point tmp(false /*check*/);
+   Position tmp(false /*check*/);
    tmp.setX(point.getX() - origin.getX());
    tmp.setY(point.getY() - origin.getY());
 
@@ -228,7 +228,7 @@ void rotate(Point & point, const Point & origin, int rotation)
  *   INPUT  begin     The position of the beginning of the line
  *          end       The position of the end of the line
  *************************************************************************/
-void drawLine(const Point & begin, const Point & end,
+void drawLine(const Position & begin, const Position & end,
               float red, float green, float blue)
 {
    // Get ready...
@@ -248,7 +248,7 @@ void drawLine(const Point & begin, const Point & end,
  * DRAW Lander
  * Draw a moon-lander spaceship on the screen at a given point
  ***********************************************************************/
-void drawLander(const Point & point)
+void drawLander(const Position & point)
 {
    // ultra simple point
    struct PT
@@ -284,7 +284,7 @@ void drawLander(const Point & point)
  * DRAW Lander Flame
  * Draw the flames coming out of a moonlander for thrust
  ***********************************************************************/
-void drawLanderFlames(const Point & point,
+void drawLanderFlames(const Position & point,
                       bool bottom,
                       bool left,
                       bool right)
@@ -401,12 +401,12 @@ double random(double min, double max)
  *         height    Vertical size
  *         rotation  Orientation
  *************************************************************************/
-void drawRect(const Point & center, int width, int height, int rotation)
+void drawRect(const Position & center, int width, int height, int rotation)
 {
-   Point tl(false /*check*/); // top left
-   Point tr(false /*check*/); // top right
-   Point bl(false /*check*/); // bottom left
-   Point br(false /*check*/); // bottom right
+   Position tl(false /*check*/); // top left
+   Position tr(false /*check*/); // top right
+   Position bl(false /*check*/); // bottom left
+   Position br(false /*check*/); // bottom right
 
    //Top Left point
    tl.setX(center.getX() - (width  / 2));
@@ -446,7 +446,7 @@ void drawRect(const Point & center, int width, int height, int rotation)
  *  INPUT   center   Center of the circle
  *          radius   Size of the circle
  *************************************************************************/
-void drawCircle(const Point & center, int radius)
+void drawCircle(const Position & center, int radius)
 {
    assert(radius > 1.0);
    const double increment = 1.0 / (double)radius;
@@ -468,7 +468,7 @@ void drawCircle(const Point & center, int radius)
  * Draw a single point on the screen, 2 pixels by 2 pixels
  *  INPUT point   The position of the dow
  *************************************************************************/
-void drawDot(const Point & point)
+void drawDot(const Position & point)
 {
    // Get ready, get set...
    glBegin(GL_POINTS);
@@ -490,7 +490,7 @@ void drawDot(const Point & point)
  *        radius  The size of the bird
  *        hits    How many its remaining to kill the bird
  *************************************************************************/
-void drawToughBird(const Point & center, float radius, int hits)
+void drawToughBird(const Position & center, float radius, int hits)
 {
    assert(radius > 1.0);
    const double increment = M_PI / 6.0;
@@ -499,10 +499,10 @@ void drawToughBird(const Point & center, float radius, int hits)
    glBegin(GL_TRIANGLES);
 
    // three points: center, pt1, pt2
-   Point pt1(false /*check*/);
+   Position pt1(false /*check*/);
    pt1.setX(center.getX() + (radius * cos(0.0)));
    pt1.setY(center.getY() + (radius * sin(0.0)));
-   Point pt2(pt1);
+   Position pt2(pt1);
 
    // go around the circle
    for (double radians = increment;
@@ -538,7 +538,7 @@ void drawToughBird(const Point & center, float radius, int hits)
  *  INPUT point   The position of the sacred
  *        radius  The size of the bird
  *************************************************************************/
-void drawSacredBird(const Point & center, float radius)
+void drawSacredBird(const Position & center, float radius)
 {
    // handle auto-rotation
    static float rotation = 0.0;
@@ -554,7 +554,7 @@ void drawSacredBird(const Point & center, float radius)
    //one point to the next
    for (int i = 0; i < 5; i++)
    {
-      Point temp(false /*check*/);
+      Position temp(false /*check*/);
       float radian = (float)i * (M_PI * 2.0) * 0.4;
       temp.setX(center.getX() + (radius * cos(radian)));
       temp.setY(center.getY() + (radius * sin(radian)));
@@ -570,7 +570,7 @@ void drawSacredBird(const Point & center, float radius)
 /**********************************************************************
  * DRAW SMALL ASTEROID
  **********************************************************************/
-void drawSmallAsteroid( const Point & center, int rotation)
+void drawSmallAsteroid( const Position & center, int rotation)
 {
    // ultra simple point
    struct PT
@@ -587,7 +587,7 @@ void drawSmallAsteroid( const Point & center, int rotation)
    glBegin(GL_LINE_STRIP);
    for (int i = 0; i < sizeof(points)/sizeof(PT); i++)
    {
-      Point pt(center.getX() + points[i].x,
+      Position pt(center.getX() + points[i].x,
                center.getY() + points[i].y);
       rotate(pt, center, rotation);
       glVertex2f(pt.getX(), pt.getY());
@@ -598,7 +598,7 @@ void drawSmallAsteroid( const Point & center, int rotation)
 /**********************************************************************
  * DRAW MEDIUM ASTEROID
  **********************************************************************/
-void drawMediumAsteroid( const Point & center, int rotation)
+void drawMediumAsteroid( const Position & center, int rotation)
 {
    // ultra simple point
    struct PT
@@ -616,7 +616,7 @@ void drawMediumAsteroid( const Point & center, int rotation)
    glBegin(GL_LINE_STRIP);
    for (int i = 0; i < sizeof(points)/sizeof(PT); i++)
    {
-      Point pt(center.getX() + points[i].x,
+      Position pt(center.getX() + points[i].x,
                center.getY() + points[i].y);
       rotate(pt, center, rotation);
       glVertex2f(pt.getX(), pt.getY());
@@ -627,7 +627,7 @@ void drawMediumAsteroid( const Point & center, int rotation)
 /**********************************************************************
  * DRAW LARGE ASTEROID
  **********************************************************************/
-void drawLargeAsteroid( const Point & center, int rotation)
+void drawLargeAsteroid( const Position & center, int rotation)
 {
    // debug
     // cout << "uiDraw.cpp::drawLargeAsteroid(p"; center.print(); cout << ", r("; rotation; cout << "));\n";
@@ -648,7 +648,7 @@ void drawLargeAsteroid( const Point & center, int rotation)
    glBegin(GL_LINE_STRIP);
    for (int i = 0; i < sizeof(points)/sizeof(PT); i++)
    {
-      Point pt(center.getX() + points[i].x,
+      Position pt(center.getX() + points[i].x,
                center.getY() + points[i].y);
       rotate(pt, center, rotation);
       glVertex2f(pt.getX(), pt.getY());
@@ -663,7 +663,7 @@ void drawLargeAsteroid( const Point & center, int rotation)
  *  INPUT point   The position of the ship
  *        angle   Which direction it is ponted
  *************************************************************************/
-void drawShip(const Point & center, int rotation, int scale, bool thrust)
+void drawShip(const Position & center, int rotation, int scale, bool thrust)
 {
    // ultra simple point
    struct PT
@@ -685,7 +685,7 @@ void drawShip(const Point & center, int rotation, int scale, bool thrust)
    glBegin(GL_LINE_STRIP);
    for (int i = 0; i < sizeof(pointsShip)/sizeof(PT); i++)
    {
-      Point pt(center.getX() + pointsShip[i].x,
+      Position pt(center.getX() + pointsShip[i].x,
                center.getY() + pointsShip[i].y);
       rotate(pt, center, rotation);
       glVertex2f(pt.getX(), pt.getY());
@@ -707,7 +707,7 @@ void drawShip(const Point & center, int rotation, int scale, bool thrust)
       int iFlame = random(0, 3);
       for (int i = 0; i < 5; i++)
       {
-         Point pt(center.getX() + pointsFlame[iFlame][i].x,
+         Position pt(center.getX() + pointsFlame[iFlame][i].x,
                   center.getY() + pointsFlame[iFlame][i].y);
          rotate(pt, center, rotation);
          glVertex2f(pt.getX(), pt.getY());

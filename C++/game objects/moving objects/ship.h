@@ -1,5 +1,5 @@
 //
-//  ship.hpp
+//  ship.h
 //  Asteroids
 //
 //  Created by Elijah Harrison on 11/7/20.
@@ -11,10 +11,10 @@
 #include <stdio.h>
 #include <string>
 
-#include "movingObject.hpp"
-#include "laser.hpp"
-#include "../../ui/uiDraw.hpp"
-#include "../../ui/uiInteract.hpp" // for rotation directions' int values
+#include "movingObject.h"
+#include "laser.h"
+#include "../../ui/uiDraw.h"
+#include "../../ui/uiInteract.h" // for rotation directions' int values
 
 #define SHIP_ROTATE_AMOUNT 15 // in rad/s
 #define SHIP_ACCELERATE_AMOUNT 2
@@ -29,7 +29,7 @@ class Ship : public MovingObject {
 protected:
     Velocity brakesAmount;
     Velocity frictionAmount;
-    float laserFiringDelayTimer;
+    double laserFiringDelayTimer;
     
 public:
     Ship() {
@@ -55,16 +55,16 @@ public:
         
         // apply brakes/friction
         if (brake) {
-            brakesAmount.setDx(-v.getDx() * SHIP_BRAKES_AMOUNT / 10);
-            brakesAmount.setDy(-v.getDy() * SHIP_BRAKES_AMOUNT / 10);
+            brakesAmount.setDx(-v.getX() * SHIP_BRAKES_AMOUNT / 10);
+            brakesAmount.setDy(-v.getY() * SHIP_BRAKES_AMOUNT / 10);
             v.add(brakesAmount);
             std::cout << "brakes applied "; brakesAmount.print(); std::cout << std::endl; // debug brakes
         }
         brake = false; // only apply brakes on frames where applyBrake() was called
         
         if (friction) {
-            frictionAmount.setDx(-v.getDx() * SHIP_FRICTION_AMOUNT / 10);
-            frictionAmount.setDy(-v.getDy() * SHIP_FRICTION_AMOUNT / 10);
+            frictionAmount.setDx(-v.getX() * SHIP_FRICTION_AMOUNT / 10);
+            frictionAmount.setDy(-v.getY() * SHIP_FRICTION_AMOUNT / 10);
             v.add(frictionAmount);
             // std::cout << "friction applied "; frictionAmount.print(); std::cout << std::endl; // debug friction
         }
@@ -94,7 +94,7 @@ public:
             setRotation(-SHIP_ROTATE_AMOUNT);
         }
 
-        // ** LEFT/RIGHT defined in keys enum in uiInteract.hpp
+        // ** LEFT/RIGHT defined in keys enum in uiInteract.h
     }
     
     void stopRotating() {
@@ -106,11 +106,11 @@ public:
     
     Laser fire() { return Laser(rotation, p, v, r); }
     
-    float getLaserFiringDelayTimer() const {
+    double getLaserFiringDelayTimer() const {
         return laserFiringDelayTimer;
     }
     void setLaserFiringDelayTimer() {
-        laserFiringDelayTimer = FIRE_DELAY_TIME; // from laser.hpp
+        laserFiringDelayTimer = FIRE_DELAY_TIME; // from laser.h
     }
     void updateLaserFiringDelayTimer() {
         if (laserFiringDelayTimer >= 0.0) {

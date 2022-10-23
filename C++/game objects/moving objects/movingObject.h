@@ -1,5 +1,5 @@
 //
-//  movingObject.hpp
+//  movingObject.h
 //  Asteroids
 //
 //  Created by Elijah Harrison on 11/7/20.
@@ -12,8 +12,7 @@
 #include <string>
 #include <math.h>
 
-#include "../../vector/point.hpp"
-#include "../../vector/velocity.hpp"
+#include "../../vector/vector.h"
 
 #define FPS 60.0
 
@@ -32,15 +31,15 @@ class MovingObject {
 protected:
     int gameObjectID;
     std::string name;
-    Point p;
+    Position p;
     Velocity v;
-    float r; // radius
-    float da; // angular velocity
-    float rotation; // orientation angle (in radians)
-    float dr; // orientation angle angular vel.
-    float thrust;
-    float mass;
-    float timer;
+    double r; // radius
+    double da; // angular velocity
+    double rotation; // orientation angle (in radians)
+    double dr; // orientation angle angular vel.
+    double thrust;
+    double mass;
+    double timer;
     int scoreAmount;
     bool timerOn; // self-destruct timer y/n
     bool alive; // is alive y/n
@@ -102,24 +101,24 @@ public:
     // getters
     std::string getName()   const { return name; }
     int getGameObjectID()   const { return gameObjectID; }
-    Point getPoint()        const { return p; }
+    Position getPosition()  const { return p; }
     Velocity getVelocity()  const { return v; }
-    float getRadius()       const { return r; }
-    float getRotation()     const { return rotation; }
+    double getRadius()       const { return r; }
+    double getRotation()     const { return rotation; }
     bool isAlive()          const { return alive; }
-    float getMass()         const { return mass; }
-    float getMomentum()     const { return mass * v.getSpeed(); }
+    double getMass()         const { return mass; }
+    double getMomentum()     const { return mass * v.getMagnitude(); }
     int getScoreAmount()    const { return scoreAmount; }
     
     // setters
-    void setPoint(Point new_p)       { p = new_p; }
-    void setPointX(float new_x)      { p.setX(new_x); }
-    void setPointY(float new_y)      { p.setY(new_y); }
+    void setPosition(Position new_p) { p = new_p; }
+    void setPositionX(double new_x)   { p.setX(new_x); }
+    void setPositionY(double new_y)   { p.setY(new_y); }
     void setVelocity(Velocity new_v) { v = new_v; }
-    void setRadius(float new_r)      { r = new_r; }
-    void setRotation(float new_dr)   { dr = new_dr; }
+    void setRadius(double new_r)      { r = new_r; }
+    void setRotation(double new_dr)   { dr = new_dr; }
     void setAlive(bool new_alive)    { alive = new_alive; }
-    void setDeathTimer(float duration);
+    void setDeathTimer(double duration);
 };
 
 #endif /* movingObject_hpp */

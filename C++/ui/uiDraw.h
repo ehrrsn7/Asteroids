@@ -15,7 +15,7 @@
 
 #include <string>     // To display text on the screen
 #include <cmath>      // for M_PI, sin() and cos()
-#include "../vector/point.hpp"    // Where things are drawn
+#include "../vector/vector.h" // Where things are drawn
 using std::string;
 
 /************************************************************************
@@ -23,26 +23,26 @@ using std::string;
  * Draw a single digit in the old school line drawing style.  The
  * size of the glyph is 8x11 or x+(0..7), y+(0..10)
  *************************************************************************/
-void drawDigit(const Point & topLeft, char digit);
+void drawDigit(const Position & topLeft, char digit);
 
 /*************************************************************************
  * DRAW NUMBER
  * Display an integer on the screen using the 7-segment method
  *************************************************************************/
-void drawNumber(const Point & topLeft, int number);
+void drawNumber(const Position & topLeft, int number);
 
 /*************************************************************************
  * DRAW TEXT
  * Draw text using a simple bitmap font
  ************************************************************************/
-void drawText(const Point & topLeft, const char * text);
+void drawText(const Position & topLeft, const char * text);
 
 /************************************************************************
  * ROTATE
  * Rotate a given point (point) around a given origin (center) by a given
  * number of degrees (angle).
  *************************************************************************/
-void rotate(Point & point, const Point & origin, int rotation = 0);
+void rotate(Position & point, const Position & origin, int rotation = 0);
 
 /************************************************************************
  * DRAW RECTANGLE
@@ -50,19 +50,19 @@ void rotate(Point & point, const Point & origin, int rotation = 0);
  * a given size (width, height), and at a given orientation (rotation)
  * measured in degrees (0 - 360)
  *************************************************************************/
-void drawRect(const Point & center, int width, int height, int rotation);
+void drawRect(const Position & center, int width, int height, int rotation);
 
 /************************************************************************
  * DRAW CIRCLE
  * Draw a circle from a given location (center) of a given size (radius).
  *************************************************************************/
-void drawCircle(const Point & center, int radius);
+void drawCircle(const Position & center, int radius);
 
 /************************************************************************
  * DRAW POLYGON
  * Draw a polygon from a given location (center) of a given size (radius).
  *************************************************************************/
-void drawPolygon(const Point & center,
+void drawPolygon(const Position & center,
                  int radius = 20,
                  int points = 4,
                  int rotation = 0);
@@ -71,7 +71,7 @@ void drawPolygon(const Point & center,
  * DRAW LINE
  * Draw a line on the screen from the beginning to the end.
  *************************************************************************/
-void drawLine(const Point & begin, const Point & end,
+void drawLine(const Position & begin, const Position & end,
              float red = 1.0, float green = 1.0, float blue = 1.0);
 
 
@@ -79,13 +79,13 @@ void drawLine(const Point & begin, const Point & end,
  * DRAW Lander
  * Draw a moon-lander spaceship on the screen at a given point
  ***********************************************************************/
-void drawLander(const Point & point);
+void drawLander(const Position & point);
 
 /***********************************************************************
  * DRAW Lander Flame
  * Draw the flames coming out of a moonlander for thrust
  ***********************************************************************/
-void drawLanderFlames(const Point & point,
+void drawLanderFlames(const Position & point,
                       bool bottom,
                       bool left,
                       bool right);
@@ -94,32 +94,32 @@ void drawLanderFlames(const Point & point,
  * DRAW DOT
  * Draw a single point on the screen, 2 pixels by 2 pixels
  *************************************************************************/
-void drawDot(const Point & point);
+void drawDot(const Position & point);
 
 /************************************************************************
  * DRAW Sacred Bird
  * Draw the bird on the screen
  *************************************************************************/
-void drawSacredBird(const Point & center, float radius);
+void drawSacredBird(const Position & center, float radius);
 
 /************************************************************************
  * DRAW Tough Bird
  * Draw a tough bird on the screen
  *************************************************************************/
-void drawToughBird(const Point & center, float radius, int hits);
+void drawToughBird(const Position & center, float radius, int hits);
 
 /************************************************************************
  * DRAW Ship
  * Draw the spaceship on the screen
  *************************************************************************/
-void drawShip(const Point & point, int rotation, int scale, bool thrust = false);
+void drawShip(const Position & point, int rotation, int scale, bool thrust = false);
 
 /**********************************************************************
  * DRAW * ASTEROID
  **********************************************************************/
-void drawSmallAsteroid( const Point & point, int rotation);
-void drawMediumAsteroid(const Point & point, int rotation);
-void drawLargeAsteroid( const Point & point, int rotation);
+void drawSmallAsteroid( const Position & point, int rotation);
+void drawMediumAsteroid(const Position & point, int rotation);
+void drawLargeAsteroid( const Position & point, int rotation);
 
 /******************************************************************
  * RANDOM
