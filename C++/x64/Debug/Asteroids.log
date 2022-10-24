@@ -1,2 +1,109 @@
-﻿MSVCRTD.lib(exe_winmain.obj) : error LNK2019: unresolved external symbol WinMain referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
-C:\Users\Admin\Documents\Code\Asteroids\C++\x64\Debug\Asteroids.exe : fatal error LNK1120: 1 unresolved externals
+﻿  movingObject.cpp
+  rocks.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\game objects\moving objects\rocks.h(72,30): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\game objects\moving objects\rocks.h(148,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\game objects\moving objects\rocks.h(172,30): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  main.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\game objects\moving objects\ship.h(49,56): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\game objects\moving objects\ship.h(49,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\game objects\moving objects\rocks.h(72,30): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\game objects\moving objects\rocks.h(148,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\game objects\moving objects\rocks.h(172,30): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  uiDraw.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(132,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(132,31): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(133,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(133,31): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(159,46): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(159,30): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(189,40): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(189,27): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(241,39): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(241,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(242,39): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(242,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(276,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(275,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(317,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(317,31): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(320,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(319,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(321,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(321,31): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(334,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(334,31): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(337,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(336,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(338,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(338,31): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(351,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(351,31): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(354,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(353,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(355,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(355,31): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(437,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(437,22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(438,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(438,22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(439,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(439,22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(440,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(440,22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(441,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(441,22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(462,32): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(461,32): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(479,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(479,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(480,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(480,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(481,46): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(481,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(482,46): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(482,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(517,44): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(517,29): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(518,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(518,26): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(519,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(519,26): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(531,54): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(531,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(560,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(563,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(564,40): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(564,27): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(595,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(595,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(624,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(624,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(656,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(656,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(693,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(693,25): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(715,39): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\ui\uiDraw.cpp(715,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  uiInteract.cpp
+  acceleration.cpp
+  force.cpp
+  gravity.cpp
+  physicsFormulas.cpp
+C:\Users\Admin\Documents\Code\Asteroids\C++\game objects\moving objects\movingObject.h(19,1): warning C4005: 'FPS': macro redefinition
+C:\Users\Admin\Documents\Code\Asteroids\C++\vector\physicsFormulas.h(8): message : see previous definition of 'FPS'
+C:\Users\Admin\Documents\Code\Asteroids\C++\game objects\moving objects\ship.h(49,56): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Admin\Documents\Code\Asteroids\C++\game objects\moving objects\ship.h(49,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  position.cpp
+  trig.cpp
+  vector.cpp
+  velocity.cpp
+  Generating Code...
+main.obj : error LNK2019: unresolved external symbol "private: void __cdecl Game::setUpScreen(class Position,class Position)" (?setUpScreen@Game@@AEAAXVPosition@@0@Z) referenced in function "public: __cdecl Game::Game(class Position,class Position)" (??0Game@@QEAA@VPosition@@0@Z)
+main.obj : error LNK2019: unresolved external symbol "private: void __cdecl Game::fireLaser(void)" (?fireLaser@Game@@AEAAXXZ) referenced in function "public: void __cdecl Game::handleInput(class Interface const &)" (?handleInput@Game@@QEAAXAEBVInterface@@@Z)
+main.obj : error LNK2019: unresolved external symbol "private: void __cdecl Game::asteroidBelt(void)" (?asteroidBelt@Game@@AEAAXXZ) referenced in function "public: __cdecl Game::Game(class Position,class Position)" (??0Game@@QEAA@VPosition@@0@Z)
+main.obj : error LNK2019: unresolved external symbol "private: void __cdecl Game::wrapObjects(void)" (?wrapObjects@Game@@AEAAXXZ) referenced in function "public: void __cdecl Game::update(void)" (?update@Game@@QEAAXXZ)
+main.obj : error LNK2019: unresolved external symbol "private: void __cdecl Game::handleCollisions(void)" (?handleCollisions@Game@@AEAAXXZ) referenced in function "public: void __cdecl Game::update(void)" (?update@Game@@QEAAXXZ)
+main.obj : error LNK2019: unresolved external symbol "private: void __cdecl Game::cleanUpZombies(void)" (?cleanUpZombies@Game@@AEAAXXZ) referenced in function "public: void __cdecl Game::update(void)" (?update@Game@@QEAAXXZ)
+main.obj : error LNK2019: unresolved external symbol "private: void __cdecl Game::reset(void)" (?reset@Game@@AEAAXXZ) referenced in function "public: void __cdecl Game::handleInput(class Interface const &)" (?handleInput@Game@@QEAAXAEBVInterface@@@Z)
+MSVCRTD.lib(exe_winmain.obj) : error LNK2019: unresolved external symbol WinMain referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\Admin\Documents\Code\Asteroids\C++\x64\Debug\Asteroids.exe : fatal error LNK1120: 8 unresolved externals

@@ -30,7 +30,9 @@
 #ifdef _WIN32
 #include <stdio.h>
 #include <stdlib.h>
-#include <GL/glut.h>         // OpenGL library we copied
+//#include <GL/gl.h>      // OpenGL library we copied
+//#include <GL/glu.h>     // OpenGL library we copied
+#include <GL/glut.h>      // OpenGL library we copied
 #define _USE_MATH_DEFINES
 #include <math.h>
 #endif // _WIN32

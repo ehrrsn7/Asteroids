@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{982e60bc-e2f0-4087-95fa-5f0c69ea7476}</ProjectGuid>
-    <RootNamespace>AsteroidsSolution</RootNamespace>
+    <ProjectGuid>{4dd4b32f-6437-4ccc-9eea-dc9ce05e37db}</ProjectGuid>
+    <RootNamespace>Asteroids</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,16 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ResourceCompile Include="Asteroids_Solution.rc" />
+    <ResourceCompile Include="Asteroids.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Asteroids_Solution.ico" />
+    <Image Include="Asteroids.ico" />
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="framework.h" />
     <ClInclude Include="game objects\moving objects\laser.h" />
     <ClInclude Include="game objects\moving objects\movingObject.h" />
     <ClInclude Include="game objects\moving objects\rocks.h" />
@@ -144,6 +142,8 @@
     <ClInclude Include="game objects\ui (objects)\level.h" />
     <ClInclude Include="game objects\ui (objects)\score.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="targetver.h" />
     <ClInclude Include="ui\uiDraw.h" />
     <ClInclude Include="ui\uiInteract.h" />
     <ClInclude Include="vector\physicsFormulas.h" />
@@ -152,7 +152,6 @@
   <ItemGroup>
     <ClCompile Include="game objects\moving objects\movingObject.cpp" />
     <ClCompile Include="game objects\moving objects\rocks.cpp" />
-    <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ui\uiDraw.cpp" />
     <ClCompile Include="ui\uiInteract.cpp" />
@@ -165,16 +164,27 @@
     <ClCompile Include="vector\vector.cpp" />
     <ClCompile Include="vector\velocity.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\boost.1.80.0\build\boost.targets" Condition="Exists('packages\boost.1.80.0\build\boost.targets')" />
+    <Import Project="packages\boost_iostreams-vc140.1.80.0\build\boost_iostreams-vc140.targets" Condition="Exists('packages\boost_iostreams-vc140.1.80.0\build\boost_iostreams-vc140.targets')" />
     <Import Project="packages\freeglut.redist.2.8.1.15\build\native\freeglut.redist.targets" Condition="Exists('packages\freeglut.redist.2.8.1.15\build\native\freeglut.redist.targets')" />
     <Import Project="packages\freeglut.2.8.1.15\build\native\freeglut.targets" Condition="Exists('packages\freeglut.2.8.1.15\build\native\freeglut.targets')" />
+    <Import Project="packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets" Condition="Exists('packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" />
+    <Import Project="packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets" Condition="Exists('packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
+    <Error Condition="!Exists('packages\boost.1.80.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost.1.80.0\build\boost.targets'))" />
+    <Error Condition="!Exists('packages\boost_iostreams-vc140.1.80.0\build\boost_iostreams-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost_iostreams-vc140.1.80.0\build\boost_iostreams-vc140.targets'))" />
     <Error Condition="!Exists('packages\freeglut.redist.2.8.1.15\build\native\freeglut.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\freeglut.redist.2.8.1.15\build\native\freeglut.redist.targets'))" />
     <Error Condition="!Exists('packages\freeglut.2.8.1.15\build\native\freeglut.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\freeglut.2.8.1.15\build\native\freeglut.targets'))" />
+    <Error Condition="!Exists('packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets'))" />
+    <Error Condition="!Exists('packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets'))" />
   </Target>
 </Project>
